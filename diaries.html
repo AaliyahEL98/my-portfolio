@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diaries of Chinese Streets - Aaliyah ElAskary</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        /* Styles for the enlarged image overlay */
+        .enlarged-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .enlarged-image-container {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .enlarged-image {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+        }
+
+        .close-btn:hover {
+            color: #ccc;
+        }
+
+        /* Diaries page specific styles */
+        .project-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: rgb(85, 85, 85);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .diary-item {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .diary-item:hover {
+            transform: scale(1.05);
+        }
+
+        .diary-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .diary-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .diary-item:hover .diary-caption {
+            transform: translateY(0);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: rgb(85, 85, 85);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div>
+           <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="videos.html">My Videos</a></li>
+            <li><a href="photography.html">My Photos</a></li>
+            <li><a href="writings.html">My Writings</a></li>
+            <li><a href="diaries.html">Chinese Streets</a></li>
+           </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="videos.html" onclick="toggleMenu()">My Videos</a></li>
+                <li><a href="photography.html" onclick="toggleMenu()">My Photos</a></li>
+                <li><a href="writings.html" onclick="toggleMenu()">My Writings</a></li>
+                <li><a href="diaries.html" onclick="toggleMenu()">Chinese Streets</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Diaries of Chinese Streets Section -->
+    <section id="diaries">
+        <p class="section__text__p1">Ongoing Project</p>
+        <h1 class="title">Diaries of Chinese Streets</h1>
+        
+        <div class="project-intro">
+            <p>
+                "The idea for this came to me when I was on a train home as a sentence I heard from a stranger that day kept repeating inside my head. It was something a mother said to her son, and for some very weird reason, it stuck with me as I moved on with my life and they moved on with theirs, with the slightest possibility of having our paths crossing again.
+            </p>
+            <p>
+                This happened more than once, with different words flying around from strangers whose lives cross mine only for very few seconds, and the idea to write their -rather mundane, and can I dare say 'insignificant?' words nagged inside my head.
+            </p>
+            <p>
+                And then it grew, into moments I collected that put a little color to my ordinary days."
+            </p>
+        </div>
+
+        <div class="section-subtitle">
+            Click on any image to view it larger
+        </div>
+
+        <div class="photo-gallery">
+            <!-- Diary Entry 1 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street1.jpg', 'A mother telling her son: "Don\'t run too far ahead" - Beijing Hutong')">
+                <img src="assets/diaries/street1.jpg" alt="Chinese Street Moment 1">
+                <div class="diary-caption">
+                    "Don't run too far ahead" - A mother's warning to her son in a Beijing hutong
+                </div>
+            </div>
+
+            <!-- Diary Entry 2 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street2.jpg', 'Elderly man practicing tai chi: "Every morning is a new beginning" - People\'s Park')">
+                <img src="assets/diaries/street2.jpg" alt="Chinese Street Moment 2">
+                <div class="diary-caption">
+                    "Every morning is a new beginning" - Elderly man practicing tai chi at dawn
+                </div>
+            </div>
+
+            <!-- Diary Entry 3 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street3.jpg', 'Street vendor calling out: "The sweetest persimmons here!" - Morning market')">
+                <img src="assets/diaries/street3.jpg" alt="Chinese Street Moment 3">
+                <div class="diary-caption">
+                    "The sweetest persimmons here!" - Street vendor's morning call at the local market
+                </div>
+            </div>
+
+            <!-- Diary Entry 4 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street4.jpg', 'Two friends laughing: "Remember that time we got lost?" - University campus')">
+                <img src="assets/diaries/street4.jpg" alt="Chinese Street Moment 4">
+                <div class="diary-caption">
+                    "Remember that time we got lost?" - Two friends sharing memories on campus
+                </div>
+            </div>
+
+            <!-- Diary Entry 5 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street5.jpg', 'Calligrapher in the park: "The brush must dance lightly" - Temple of Heaven')">
+                <img src="assets/diaries/street5.jpg" alt="Chinese Street Moment 5">
+                <div class="diary-caption">
+                    "The brush must dance lightly" - Calligrapher teaching his grandson in the park
+                </div>
+            </div>
+
+            <!-- Diary Entry 6 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street6.jpg', 'Tea house owner: "This pot has seen thirty winters" - Old Beijing')">
+                <img src="assets/diaries/street6.jpg" alt="Chinese Street Moment 6">
+                <div class="diary-caption">
+                    "This pot has seen thirty winters" - Tea house owner polishing his prized possession
+                </div>
+            </div>
+
+            <!-- Diary Entry 7 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street7.jpg', 'Musician tuning his erhu: "The strings must sing of both joy and sorrow" - Park bench')">
+                <img src="assets/diaries/street7.jpg" alt="Chinese Street Moment 7">
+                <div class="diary-caption">
+                    "The strings must sing of both joy and sorrow" - Elderly musician tuning his erhu
+                </div>
+            </div>
+
+            <!-- Diary Entry 8 -->
+            <div class="diary-item" onclick="enlargeImage('assets/diaries/street8.jpg', 'Grandmother knitting: "For my granddaughter\'s first winter" - Courtyard home')">
+                <img src="assets/diaries/street8.jpg" alt="Chinese Street Moment 8">
+                <div class="diary-caption">
+                    "For my granddaughter's first winter" - Grandmother knitting in her courtyard
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enlarged Image Overlay -->
+    <div id="enlargedOverlay" class="enlarged-overlay" onclick="closeEnlarged()">
+        <div class="enlarged-image-container" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeEnlarged()">×</button>
+            <img id="enlargedImg" class="enlarged-image" src="" alt="Enlarged view">
+            <div id="enlargedCaption" style="color: white; text-align: center; margin-top: 1rem; font-style: italic;"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to enlarge image with caption
+        function enlargeImage(src, caption) {
+            document.getElementById('enlargedImg').src = src;
+            document.getElementById('enlargedCaption').textContent = caption;
+            document.getElementById('enlargedOverlay').style.display = 'flex';
+        }
+
+        // Function to close enlarged image
+        function closeEnlarged() {
+            document.getElementById('enlargedOverlay').style.display = 'none';
+        }
+
+        // Close when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeEnlarged();
+            }
+        });
+
+        // Mobile menu function
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const icon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

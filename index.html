@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div>
+           <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="videos.html">My Videos</a></li>
+            <li><a href="photography.html">My Photos</a></li>
+            <li><a href="writings.html">My Writings</a></li>
+            <li><a href="diaries.html">Chinese Streets</a></li>
+           </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="videos.html" onclick="toggleMenu()">My Videos</a></li>
+                <li><a href="photography.html" onclick="toggleMenu()">My Photos</a></li>
+                <li><a href="writings.html" onclick="toggleMenu()">My Writings</a></li>
+                <li><a href="diaries.html" onclick="toggleMenu()">Chinese Streets</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PROFILE SECTION -->
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./assets/profilepic.jpg" alt="Aaliyah ElAskary profile pic"> 
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Aaliyah ElAskary</h1>
+            <p class="section__text__p2">Social Media Manager</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/resume-english.pdf')">Download CV - English Version</button>
+                <button class="btn btn-color-2" onclick="window.open('./assets/resume-chinese.pdf')">下载个人简历 - 中文版</button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://linkedin.com/'">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME PREVIEW SECTION -->
+    <section id="about-preview">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="video-cv-container">
+                <!-- Replace with your actual video CV -->
+                <video width="100%" controls style="border-radius: 2rem; max-width: 600px;">
+                    <source src="./assets/video-cv.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- OR if you have a YouTube video -->
+                <!--
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_CV_ID" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen style="border-radius: 2rem;">
+                </iframe>
+                -->
+            </div>
+        </div>
+        <div class="btn-container" style="margin-top: 2rem;">
+            <button class="btn btn-color-1" onclick="location.href='about.html'">
+                Know More About Me
+            </button>
+        </div>
+    </section>
+
+    <!-- DIARIES PROJECT PREVIEW SECTION -->
+    <section id="diaries-preview">
+        <p class="section__text__p1">Ongoing Project</p>
+        <h1 class="title">Diaries of Chinese Streets</h1>
+        
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <!-- Preview 1 -->
+                <div class="details-container color-container">
+                    <img src="./assets/diaries-preview/street-preview1.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <h2 class="experience-sub-title">Street Moments</h2>
+                    <p>Capturing everyday life in Chinese streets</p>
+                </div>
+                <!-- Preview 2 -->
+                <div class="details-container color-container">
+                    <img src="./assets/diaries-preview/street-preview2.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <h2 class="experience-sub-title">Urban Stories</h2>
+                    <p>Words and moments from strangers</p>
+                </div>
+                <!-- Preview 3 -->
+                <div class="details-container color-container">
+                    <img src="./assets/diaries-preview/street-preview3.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <h2 class="experience-sub-title">Cultural Encounters</h2>
+                    <p>Brief meetings, lasting impressions</p>
+                </div>
+            </div>
+            <!-- "Know More" Button -->
+            <div class="btn-container" style="margin-top: 2rem;">
+                <button class="btn btn-color-1" onclick="location.href='diaries.html'">
+                    Know More About The Project Here
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTOGRAPHY SNEAK PEEK SECTION -->
+    <section id="photography-preview">
+        <p class="section__text__p1">Browse My</p>
+        <h1 class="title">Photography</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <!-- Photo Preview 1 -->
+                <div class="details-container color-container">
+                    <img src="./assets/photos/photo-preview-1.jpg" alt="My Photography" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <h2 class="experience-sub-title">Shot on iPhone</h2>
+                    <p>China through unexpected moments</p>
+                </div>
+                <!-- Photo Preview 2 -->
+                <div class="details-container color-container">
+                    <img src="./assets/photos/photo-preview-2.jpg" alt="My Photography" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <h2 class="experience-sub-title">Beijing on Digital</h2>
+                    <p>Returning to where it all began</p>
+                </div>
+            </div>
+            <!-- "More Photos" Button -->
+            <div class="btn-container" style="margin-top: 2rem;">
+                <button class="btn btn-color-1" onclick="location.href='photography.html'">
+                    See More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEOS SNEAK PEEK SECTION -->
+    <section id="videos-preview">
+        <p class="section__text__p1">Watch My</p>
+        <h1 class="title">Videos</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <!-- Collaborations Preview -->
+                <div class="details-container color-container">
+                    <img src="./assets/videos/collab-preview.jpg" alt="Video Collaboration" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <h2 class="experience-sub-title">Collaborations</h2>
+                    <p>Videos made with other creators</p>
+                </div>
+                <!-- My Own Videos Preview -->
+                <div class="details-container color-container">
+                    <img src="./assets/videos/my-videos-preview.jpg" alt="My Original Videos" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <h2 class="experience-sub-title">My Original Content</h2>
+                    <p>Videos I created myself</p>
+                </div>
+            </div>
+            <!-- "More Videos" Button -->
+            <div class="btn-container" style="margin-top: 2rem;">
+                <button class="btn btn-color-1" onclick="location.href='videos.html'">
+                    Watch More Videos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- WRITINGS SNEAK PEEK SECTION -->
+    <section id="writings-preview">
+        <p class="section__text__p1">Read My</p>
+        <h1 class="title">Writings</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <!-- Writing Preview 1 -->
+                <div class="details-container color-container">
+                    <h2 class="experience-sub-title">Finding My Way in China</h2>
+                    <p>"The first time I arrived in Beijing, I made a conscious decision to leave my map behind. It wasn't about being reckless, but about truly experiencing the city through its people..."</p>
+                    <p style="color: grey; font-style: italic;">Read more to see the full story</p>
+                </div>
+                <!-- Writing Preview 2 -->
+                <div class="details-container color-container">
+                    <h2 class="experience-sub-title">The Art of Collaboration</h2>
+                    <p>"In today's connected world, the most compelling stories often emerge from collaboration. Working with other creators has taught me that the magic happens when different perspectives collide..."</p>
+                    <p style="color: grey; font-style: italic;">Click below to read more</p>
+                </div>
+            </div>
+            <!-- "More Writings" Button -->
+            <div class="btn-container" style="margin-top: 2rem;">
+                <button class="btn btn-color-1" onclick="location.href='writings.html'">
+                    Read More Writings
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Mobile menu function - make sure this matches your script.js
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const icon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Videos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 2rem;
+            border: rgb(53,53,53) 0.1rem solid;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 1rem;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: rgb(53,53,53);
+        }
+
+        .video-description {
+            color: rgb(85,85,85);
+            font-size: 0.9rem;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: rgb(85, 85, 85);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div>
+           <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="videos.html">My Videos</a></li>
+            <li><a href="photography.html">My Photos</a></li>
+            <li><a href="writings.html">My Writings</a></li>
+            <li><a href="diaries.html">Chinese Streets</a></li>
+           </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="videos.html" onclick="toggleMenu()">My Videos</a></li>
+                <li><a href="photography.html" onclick="toggleMenu()">My Photos</a></li>
+                <li><a href="writings.html" onclick="toggleMenu()">My Writings</a></li>
+                <li><a href="diaries.html" onclick="toggleMenu()">Chinese Streets</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: My Videos -->
+    <section id="my-videos">
+        <p class="section__text__p1">Original Content</p>
+        <h1 class="title">My Videos</h1>
+        
+        <div class="section-intro">
+            A collection of videos I've created and produced myself.
+        </div>
+
+        <div class="video-gallery">
+            <!-- Video 1 -->
+            <div class="video-item">
+                <div class="video-container">
+                    <!-- Replace with your YouTube embed code or video file -->
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                    <!-- OR if you have video files: -->
+                    <!-- <video controls>
+                        <source src="assets/videos/my-video1.mp4" type="video/mp4">
+                    </video> -->
+                </div>
+                <div class="video-title">My Creative Project</div>
+                <div class="video-description">Short description of what this video is about and what I created.</div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-title">Personal Story</div>
+                <div class="video-description">Another video I made sharing my experiences and creative vision.</div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-title">Creative Process</div>
+                <div class="video-description">Showing how I approach my creative work and video production.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Collaborations -->
+    <section id="collaborations">
+        <p class="section__text__p1">Team Projects</p>
+        <h1 class="title">Collaborations</h1>
+        
+        <div class="section-intro">
+            Videos I've created with other creators, channels, and projects.
+        </div>
+
+        <div class="video-gallery">
+            <!-- Collaboration 1 -->
+            <div class="video-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_COLLAB_VIDEO_ID_1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-title">Project with [Channel Name]</div>
+                <div class="video-description">Collaboration video where I worked with [Channel Name] on [project type].</div>
+            </div>
+
+            <!-- Collaboration 2 -->
+            <div class="video-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_COLLAB_VIDEO_ID_2" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-title">Team Project: [Project Name]</div>
+                <div class="video-description">Worked with a team to create this collaborative video project.</div>
+            </div>
+
+            <!-- Collaboration 3 -->
+            <div class="video-item">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YOUR_COLLAB_VIDEO_ID_3" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-title">Guest Appearance</div>
+                <div class="video-description">Featured in this video collaboration with other content creators.</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu function
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const icon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

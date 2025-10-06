@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Writings</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        .writings-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .writing-item {
+            background: white;
+            border-radius: 2rem;
+            border: rgb(53,53,53) 0.1rem solid;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .writing-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .writing-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: rgb(53,53,53);
+        }
+
+        .writing-preview {
+            color: rgb(85,85,85);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .writing-full {
+            color: rgb(85,85,85);
+            line-height: 1.6;
+            display: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: rgb(53,53,53);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        .read-more-btn:hover {
+            color: grey;
+        }
+
+        .writing-date {
+            color: #999;
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div>
+           <ul class="nav-links">
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="videos.html">My Videos</a></li>
+            <li><a href="photography.html">My Photos</a></li>
+            <li><a href="writings.html">My Writings</a></li>
+            <li><a href="diaries.html">Chinese Streets</a></li>
+           </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Aaliyah ElAskary</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About Me</a></li>
+                <li><a href="videos.html" onclick="toggleMenu()">My Videos</a></li>
+                <li><a href="photography.html" onclick="toggleMenu()">My Photos</a></li>
+                <li><a href="writings.html" onclick="toggleMenu()">My Writings</a></li>
+                <li><a href="diaries.html" onclick="toggleMenu()">Chinese Streets</a></li>
+            </div>
+        </div>
+    </nav>
+
+    <section id="writings">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Writings</h1>
+        
+        <div class="section-intro" style="text-align: center; margin-bottom: 2rem; color: rgb(85, 85, 85);">
+            A collection of my thoughts, stories, and articles.
+        </div>
+
+        <div class="writings-gallery">
+            <!-- Writing 1 -->
+            <div class="writing-item">
+                <div class="writing-title">Finding My Way in China Without a Map</div>
+                <div class="writing-preview" id="preview1">
+                    The first time I arrived in Beijing, I made a conscious decision to leave my map behind. It wasn't about being reckless, but about truly experiencing the city through its people, its sounds, and its unexpected corners. This is the story of how getting lost helped me find a deeper connection with...
+                </div>
+                <div class="writing-full" id="full1">
+                    The first time I arrived in Beijing, I made a conscious decision to leave my map behind. It wasn't about being reckless, but about truly experiencing the city through its people, its sounds, and its unexpected corners. This is the story of how getting lost helped me find a deeper connection with a culture that was entirely new to me.
+                    
+                    <br><br>I remember wandering through the hutongs, those ancient alleyways that weave through the city like veins. Without a map to guide me, I had to rely on the kindness of strangers, the smell of street food to lead me to lunch, and the sounds of daily life to understand the rhythm of the city. An elderly woman selling steamed buns became my temporary guide, a group of children playing jump rope showed me a shortcut, and the distant sound of erhu music led me to a small community theater.
+                    
+                    <br><br>In that week of intentional disorientation, I discovered that sometimes the best way to understand a place is to surrender to it completely. The map I eventually created in my mind was far richer than any printed one could ever be - filled with the tastes of jianbing from a street vendor, the texture of ancient stone walls under my fingertips, and the melodies of conversations I couldn't understand but felt deeply.
+                    
+                    <br><br>This experience taught me that creativity often flourishes in the space between the planned and the spontaneous, between knowing exactly where you're going and being open to where the journey might take you.
+                </div>
+                <button class="read-more-btn" onclick="toggleArticle(1)">Read Full Article</button>
+                <div class="writing-date">Published: March 15, 2023</div>
+            </div>
+
+            <!-- Writing 2 -->
+            <div class="writing-item">
+                <div class="writing-title">The Art of Collaboration in Digital Storytelling</div>
+                <div class="writing-preview" id="preview2">
+                    In today's connected world, the most compelling stories often emerge from collaboration. Working with other creators has taught me that the magic happens when different perspectives collide. From video projects with international teams to writing collaborations across time zones...
+                </div>
+                <div class="writing-full" id="full2">
+                    In today's connected world, the most compelling stories often emerge from collaboration. Working with other creators has taught me that the magic happens when different perspectives collide. From video projects with international teams to writing collaborations across time zones, I've discovered that the whole can indeed be greater than the sum of its parts.
+                    
+                    <br><br>One of my most memorable collaborations was with a filmmaker from Shanghai and a writer from Cairo. We set out to create a series about cultural connections in the digital age. Despite being separated by thousands of miles and multiple time zones, we found that our different backgrounds created a richness in the work that none of us could have achieved alone.
+                    
+                    <br><br>The filmmaker brought visual poetry to our concepts, the writer added narrative depth I hadn't considered, and my role in social media management helped us understand how to make the content resonate with diverse audiences. The project became more than just a series - it became a conversation between cultures, mediated through our shared love of storytelling.
+                    
+                    <br><br>Collaboration requires vulnerability and trust. It means being open to having your ideas challenged and transformed. But the reward is creating something that carries pieces of each creator's soul - a mosaic of perspectives that creates a more complete, more human picture.
+                </div>
+                <button class="read-more-btn" onclick="toggleArticle(2)">Read Full Article</button>
+                <div class="writing-date">Published: January 8, 2024</div>
+            </div>
+
+            <!-- Writing 3 -->
+            <div class="writing-item">
+                <div class="writing-title">From Social Media Manager to Storyteller</div>
+                <div class="writing-preview" id="preview3">
+                    My journey into social media management began as a practical career choice, but it quickly evolved into something much deeper. I realized that behind every successful campaign, every viral post, and every engaged community, there's a fundamental human need for connection and narrative...
+                </div>
+                <div class="writing-full" id="full3">
+                    My journey into social media management began as a practical career choice, but it quickly evolved into something much deeper. I realized that behind every successful campaign, every viral post, and every engaged community, there's a fundamental human need for connection and narrative. This realization transformed how I approach my work and my creative projects.
+                    
+                    <br><br>Early in my career, I focused on metrics: engagement rates, click-throughs, follower growth. But I noticed that the content that truly resonated, the campaigns that people remembered and shared, were the ones that told authentic stories. A behind-the-scenes look at a small business owner's journey, a personal reflection on overcoming challenges, a moment of genuine human connection - these were the posts that created real impact.
+                    
+                    <br><br>I began to see social media not as a distribution channel, but as a modern-day campfire where we gather to share stories. The algorithms and platforms are just the tools; the heart remains the ancient human practice of storytelling. This perspective shift led me to explore other forms of storytelling - through my photography in China, my video collaborations, and my personal writing.
+                    
+                    <br><br>Now, whether I'm crafting a social media strategy, shooting a video, or writing an article, I ask the same fundamental question: What story are we telling here? And more importantly, how does this story connect us to each other? The answer to that question has become the guiding principle of all my creative work.
+                </div>
+                <button class="read-more-btn" onclick="toggleArticle(3)">Read Full Article</button>
+                <div class="writing-date">Published: November 22, 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Toggle articles between preview and full view
+        function toggleArticle(articleNumber) {
+            const preview = document.getElementById('preview' + articleNumber);
+            const full = document.getElementById('full' + articleNumber);
+            const button = document.querySelector(`button[onclick="toggleArticle(${articleNumber})"]`);
+            
+            if (full.style.display === 'block') {
+                // Show preview, hide full article
+                preview.style.display = 'block';
+                full.style.display = 'none';
+                button.textContent = 'Read Full Article';
+            } else {
+                // Hide preview, show full article
+                preview.style.display = 'none';
+                full.style.display = 'block';
+                button.textContent = 'Show Less';
+            }
+        }
+
+        // Mobile menu function
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const icon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle('open');
+            icon.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
