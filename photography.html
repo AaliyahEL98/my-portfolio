@@ -15,10 +15,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             z-index: 1000;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(5px);
         }
 
         .enlarged-image-container {
@@ -30,7 +31,8 @@
         .enlarged-image {
             max-width: 100%;
             max-height: 90vh;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .close-btn {
@@ -38,17 +40,23 @@
             top: -40px;
             right: -40px;
             color: white;
-            font-size: 30px;
+            font-size: 40px;
             font-weight: bold;
             cursor: pointer;
-            background: none;
-            border: none;
-            width: 40px;
-            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
 
         .close-btn:hover {
-            color: #ccc;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
         }
 
         /* Photography page specific styles */
@@ -60,31 +68,6 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .photo-item {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .photo-item:hover {
-            transform: scale(1.05);
-        }
-
-        .photo-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
         }
     </style>
 </head>
@@ -132,48 +115,52 @@
 
         <div class="photo-gallery">
             <!-- Photo 1 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone1.jpg')">
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_418820864_1854713401615897_5676278496310675237_n.jpg')">
                 <img src="assets/photos/iphone 14/SnapInsta.to_418820864_1854713401615897_5676278496310675237_n.jpg" alt="iPhone Photo 1">
             </div>
-            <!-- Photo 4 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone4.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_458132441_2879205075569110_6580824848194472869_n.jpg" alt="iPhone Photo 4">
-            </div>
-            <!-- Photo 7 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone6.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_468691450_2073027069797697_6928451742569215885_n.jpg" alt="iPhone Photo 6">
-            </div>
-            <!-- Photo 5 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone5.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_459405210_1441956093120053_5608807426698436358_n.jpg" alt="iPhone Photo 5">
+            <!-- Photo 2 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_458132441_2879205075569110_6580824848194472869_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_458132441_2879205075569110_6580824848194472869_n.jpg" alt="iPhone Photo 2">
             </div>
             <!-- Photo 3 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone3.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_432155415_763336432115178_6199189194731307129_n.jpg" alt="iPhone Photo 3">
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_468691450_2073027069797697_6928451742569215885_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_468691450_2073027069797697_6928451742569215885_n.jpg" alt="iPhone Photo 3">
+            </div>
+            <!-- Photo 4 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_459405210_1441956093120053_5608807426698436358_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_459405210_1441956093120053_5608807426698436358_n.jpg" alt="iPhone Photo 4">
+            </div>
+            <!-- Photo 5 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_432155415_763336432115178_6199189194731307129_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_432155415_763336432115178_6199189194731307129_n.jpg" alt="iPhone Photo 5">
             </div>
             <!-- Photo 6 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone6.jpg')">
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_465623839_3435017163297961_8464812756513153042_n.jpg')">
                 <img src="assets/photos/iphone 14/SnapInsta.to_465623839_3435017163297961_8464812756513153042_n.jpg" alt="iPhone Photo 6">
             </div>
-             <!-- Photo 8 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone6.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_468960856_1115737490107070_2564160576145518162_n.jpg" alt="iPhone Photo 6">
+            <!-- Photo 7 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_468960856_1115737490107070_2564160576145518162_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_468960856_1115737490107070_2564160576145518162_n.jpg" alt="iPhone Photo 7">
             </div>
-             <!-- Photo 2 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone2.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_475652532_17895172383141481_6043811609565643951_n.jpg" alt="iPhone Photo 2">
+            <!-- Photo 8 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_475652532_17895172383141481_6043811609565643951_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_475652532_17895172383141481_6043811609565643951_n.jpg" alt="iPhone Photo 8">
             </div>
-            <!-- Photo 2 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone2.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_477080433_17896271970141481_3751174866769535613_n.jpg" alt="iPhone Photo 2">
+            <!-- Photo 9 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_477080433_17896271970141481_3751174866769535613_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_477080433_17896271970141481_3751174866769535613_n.jpg" alt="iPhone Photo 9">
             </div>
-             <!-- Photo 2 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone2.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_476790626_17896271913141481_1866979609657870375_n.jpg" alt="iPhone Photo 2">
+            <!-- Photo 10 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_476790626_17896271913141481_1866979609657870375_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_476790626_17896271913141481_1866979609657870375_n.jpg" alt="iPhone Photo 10">
             </div>
-            <!-- Photo 2 -->
-            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone2.jpg')">
-                <img src="assets/photos/iphone 14/SnapInsta.to_468660790_553512680865131_2245899655936143732_n.jpg" alt="iPhone Photo 2">
+            <!-- Photo 11 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_468660790_553512680865131_2245899655936143732_n.jpg')">
+                <img src="assets/photos/iphone 14/SnapInsta.to_468660790_553512680865131_2245899655936143732_n.jpg" alt="iPhone Photo 11">
+            </div>
+            <!-- Photo 11 -->
+            <div class="photo-item" onclick="enlargeImage('assets/photos/iphone 14/SnapInsta.to_468660790_553512680865131_2245899655936143732_n.jpg')">
+                <img src="assets/photos/iphone 14/IMG_7259.jpeg" alt="iPhone Photo 11">
             </div>
         </div>
     </section>
@@ -184,7 +171,7 @@
         <h1 class="title">Beijing on Digital</h1>
         
         <div class="section-intro">
-            "In 2023, I was able to go back to the first city I visited in China."
+            "Last picture taken on my digital camera was in 2014. I picked it up before coming to China, but for some reason left in my drawer again for a long while... until this trip to Beijing."
         </div>
 
         <div class="photo-gallery">
