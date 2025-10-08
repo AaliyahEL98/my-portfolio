@@ -1,8 +1,454 @@
+/* RESPONSIVE MEDIA QUERIES */
+
+/* Large Tablets and Small Desktops (1200px and below) */
 @media screen and (max-width: 1200px) {
     #desktop-nav {
         display: none;
     }
+    
     #hamburger-nav {
         display: flex;
     }
+    
+    section {
+        margin: 0 5rem;
+    }
+    
+    .about-containers {
+        flex-wrap: wrap;
+    }
 }
+
+/* Tablets (1000px and below) */
+@media screen and (max-width: 1000px) {
+    nav {
+        height: 12vh;
+    }
+    
+    section {
+        margin: 0 3rem;
+    }
+    
+    #profile {
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+    
+    .section__pic-container {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .section__text__p2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn-container {
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .about-containers {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .experience-details-container {
+        margin-top: 2rem;
+    }
+    
+    .video-gallery,
+    .photo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .writings-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        padding: 2rem;
+        gap: 2rem;
+    }
+}
+
+/* Mobile Devices (768px and below) */
+@media screen and (max-width: 768px) {
+    section {
+        margin: 0 2rem;
+        height: auto;
+        padding: 3rem 0;
+    }
+    
+    nav {
+        height: 10vh;
+    }
+    
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        font-size: 1.2rem;
+        gap: 1rem;
+    }
+    
+    #profile {
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+    
+    .section__pic-container {
+        height: 250px;
+        width: 250px;
+    }
+    
+    .section__pic-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .section__text__p1 {
+        font-size: 1rem;
+    }
+    
+    .section__text__p2 {
+        font-size: 1.25rem;
+    }
+    
+    .btn-container {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .about-content {
+        padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .about-photo img {
+        max-width: 100%;
+    }
+    
+    .about-text {
+        font-size: 1rem;
+    }
+    
+    .photo-gallery,
+    .video-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .photo-item img,
+    .diary-item img {
+        height: 250px;
+    }
+    
+    .video-container {
+        height: 180px;
+    }
+    
+    .section-container {
+        gap: 2rem;
+        flex-direction: column;
+    }
+    
+    .details-container {
+        padding: 1.5rem;
+    }
+    
+    .experience-sub-title {
+        font-size: 1.5rem;
+    }
+    
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .writing-item {
+        padding: 1.5rem;
+    }
+    
+    .writing-title {
+        font-size: 1.2rem;
+    }
+    
+    .project-intro,
+    .section-intro {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .enlarged-image-container {
+        max-width: 95%;
+    }
+    
+    .close-btn {
+        top: -35px;
+        right: 0;
+        font-size: 35px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .menu-links {
+        width: 100%;
+        min-width: 200px;
+    }
+    
+    .menu-links.open {
+        max-height: 400px;
+    }
+}
+
+/* Small Mobile Devices (480px and below) */
+@media screen and (max-width: 480px) {
+    section {
+        margin: 0 1rem;
+        padding: 2rem 0;
+    }
+    
+    nav {
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .hamburger-icon {
+        width: 25px;
+        height: 20px;
+    }
+    
+    .menu-links a {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+    }
+    
+    .section__pic-container {
+        height: 200px;
+        width: 200px;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+    }
+    
+    .section__text__p1 {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .section__text__p2 {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.7rem 1rem;
+        max-width: 100%;
+    }
+    
+    .photo-gallery,
+    .video-gallery,
+    .writings-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .photo-item img,
+    .diary-item img {
+        height: 200px;
+    }
+    
+    .video-container {
+        height: 150px;
+    }
+    
+    .about-text,
+    .section-intro,
+    .project-intro {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .about-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .writing-item {
+        padding: 1.2rem;
+        border-radius: 20px;
+    }
+    
+    .writing-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .writing-preview,
+    .writing-full {
+        font-size: 0.9rem;
+    }
+    
+    .details-container {
+        padding: 1rem;
+        border-radius: 20px;
+    }
+    
+    .experience-sub-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .diary-caption {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+    
+    .photo-caption {
+        font-size: 0.85rem;
+    }
+    
+    .icon {
+        height: 2rem;
+        width: 2rem;
+    }
+    
+    .video-item {
+        padding: 1rem;
+    }
+}
+
+/* Extra Small Devices (360px and below) */
+@media screen and (max-width: 360px) {
+    section {
+        margin: 0 0.5rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .section__pic-container {
+        height: 180px;
+        width: 180px;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .photo-item img,
+    .diary-item img {
+        height: 180px;
+    }
+    
+    .video-container {
+        height: 130px;
+    }
+    
+    .details-container,
+    .writing-item {
+        padding: 0.8rem;
+    }
+    
+    .section-intro,
+    .project-intro {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    section {
+        height: auto;
+        padding: 2rem 0;
+    }
+    
+    #profile {
+        height: auto;
+        padding: 2rem 0;
+    }
+    
+    nav {
+        height: 8vh;
+    }
+    
+    .section__pic-container {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+/* Fix for very wide screens */
+@media screen and (min-width: 1600px) {
+    section {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Touch Device Adjustments */
+@media (hover: none) and (pointer: coarse) {
+    .photo-item:hover,
+    .diary-item:hover,
+    .video-item:hover,
+    .writing-item:hover {
+        transform: none;
+    }
+    
+    .photo-item:active,
+    .diary-item:active,
+    .video-item:active,
+    .writing-item:active {
+        transform: scale(0.98);
+    }
+    
+    .diary-item .diary-caption {
+        transform: translateY(0);
+        position: relative;
+        background: rgba(0, 0, 0, 0.8);
+    }
+    
+    a::after {
+        display: none;
+    }
+}
+
+/* Reduced Motion for Accessibility */
+@media (
