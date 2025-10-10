@@ -6,6 +6,165 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
+    <style>
+        .video-preview-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            margin-bottom: 1rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #000;
+            cursor: pointer;
+        }
+
+        .video-preview-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: background 0.3s ease;
+        }
+
+        .play-icon::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 25px solid rgba(0, 0, 0, 0.8);
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            margin-left: 5px;
+        }
+
+        .video-preview-container:hover .play-icon {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fullscreen-modal.active {
+            display: flex;
+        }
+
+        .fullscreen-modal-content {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            max-width: 1200px;
+            max-height: 800px;
+        }
+
+        .fullscreen-modal-content video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .close-fullscreen {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .close-fullscreen:hover {
+            color: #ccc;
+        }
+
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal-content {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            max-width: 1000px;
+            max-height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .close-image {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .close-image:hover {
+            color: #ccc;
+        }
+
+        .details-container img {
+    cursor: pointer;
+}
+
+        details-container img {
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .details-container img:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
     <nav id="desktop-nav">
@@ -30,12 +189,12 @@
                 <span></span>
             </div>
             <div class="menu-links">
-                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                 <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
                 <li><a href="about.html" onclick="toggleMenu()">About Me</a></li>
-                <li><a href="videos.html" onclick="toggleMenu()">My Videos</a></li>
-                <li><a href="photography.html" onclick="toggleMenu()">My Photos</a></li>
-                <li><a href="writings.html" onclick="toggleMenu()">My Writings</a></li>
-                <li><a href="diaries.html" onclick="toggleMenu()">Chinese Streets</a></li>
+                <li><a href="videos.html" onclick="toggleMenu()">Videos</a></li>
+                <li><a href="photography.html" onclick="toggleMenu()">Photography</a></li>
+                <li><a href="writings.html" onclick="toggleMenu()">Writings</a></li>
+                <li><a href="diaries.html" onclick="toggleMenu()">Ongoing Project</a></li>
             </div>
         </div>
     </nav>
@@ -84,18 +243,18 @@
             <div class="about-containers">
                 <!-- Preview 1 -->
                 <div class="details-container color-container">
-                    <img src="./assets/photos/Diaries of Chinese Streets/11.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <img src="./assets/photos/Diaries of Chinese Streets/11.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;" onclick="openImageFullscreen(this)">
                     <h2 class="experience-sub-title">The Teen Within"</h2>
                 </div>
                 <!-- Preview 2 -->
                 <div class="details-container color-container">
-                    <img src="./assets/photos/Diaries of Chinese Streets/12.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <img src="./assets/photos/Diaries of Chinese Streets/12.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;" onclick="openImageFullscreen(this)">
                     <h2 class="experience-sub-title">"Don't you just love humans...?"</h2>
                     
                 </div>
                 <!-- Preview 3 -->
                 <div class="details-container color-container">
-                    <img src="./assets/photos/Diaries of Chinese Streets/14.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <img src="./assets/photos/Diaries of Chinese Streets/14.jpg" alt="Diaries of Chinese Streets" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;" onclick="openImageFullscreen(this)">
                     <h2 class="experience-sub-title">"Taiwan Station?</h2>
                    
                 </div>
@@ -117,13 +276,13 @@
             <div class="about-containers">
                 <!-- Photo Preview 1 -->
                 <div class="details-container color-container">
-                    <img src="./assets/photos/iphone 14/SnapInsta.to_432155415_763336432115178_6199189194731307129_n.jpg" alt="My Photography" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <img src="./assets/photos/iphone 14/SnapInsta.to_432155415_763336432115178_6199189194731307129_n.jpg" alt="My Photography" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;" onclick="openImageFullscreen(this)">
                     <h2 class="experience-sub-title">Shot on iPhone</h2>
                     <p>China through the eyes of the girl without the map.</p>
                 </div>
                 <!-- Photo Preview 2 -->
                 <div class="details-container color-container">
-                    <img src="./assets/photos/Digital/2.jpeg" alt="My Photography" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <img src="./assets/photos/Digital/2.jpeg" alt="My Photography" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;" onclick="openImageFullscreen(this)">
                     <h2 class="experience-sub-title">Beijing on Digital</h2>
                     <p>Last picture taken on my digital camera was in 2014...</p>
                 </div>
@@ -145,15 +304,23 @@
             <div class="about-containers">
                 <!-- Collaborations Preview -->
                 <div class="details-container color-container">
-                    <img src="./assets/videos/collab-preview.jpg" alt="Video Collaboration" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <div class="video-preview-container horizontal" onclick="openFullscreen(this.querySelector('video'))">
+                        <video>
+                            <source src="./assets/videos/projects/10月9日.mov" type="video/quicktime">
+                        </video>
+                        <div class="play-icon"></div>
+                    </div>
                     <h2 class="experience-sub-title">Collaborations</h2>
-                    <p>Videos made with other creators</p>
                 </div>
                 <!-- My Own Videos Preview -->
                 <div class="details-container color-container">
-                    <img src="./assets/videos/my-videos-preview.jpg" alt="My Original Videos" style="width:100%; border-radius: 1rem; height: 250px; object-fit: cover;">
+                    <div class="video-preview-container vertical" onclick="openFullscreen(this.querySelector('video'))">
+                        <video>
+                            <source src="./assets/videos/mine/1.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon"></div>
+                    </div>
                     <h2 class="experience-sub-title">My Original Content</h2>
-                    <p>Videos I created myself</p>
                 </div>
             </div>
             <!-- "More Videos" Button -->
@@ -173,15 +340,17 @@
             <div class="about-containers">
                 <!-- Writing Preview 1 -->
                 <div class="details-container color-container">
-                    <h2 class="experience-sub-title">Finding My Way in China</h2>
-                    <p>"The first time I arrived in Beijing, I made a conscious decision to leave my map behind. It wasn't about being reckless, but about truly experiencing the city through its people..."</p>
-                    <p style="color: grey; font-style: italic;">Read more to see the full story</p>
+                    <h2 class="experience-sub-title">Evolution of Hanzi</h2>
+                    <p>"'Why Chinese?''<p>
+</p>Two words; sounding incredibly simple to answer, yet every time I feel like needing
+endless amount of hours to answer such question..."</p>
+                    <p style="color: grey; font-style: italic;">Click below to read the full story</p>
                 </div>
                 <!-- Writing Preview 2 -->
                 <div class="details-container color-container">
-                    <h2 class="experience-sub-title">The Art of Collaboration</h2>
-                    <p>"In today's connected world, the most compelling stories often emerge from collaboration. Working with other creators has taught me that the magic happens when different perspectives collide..."</p>
-                    <p style="color: grey; font-style: italic;">Click below to read more</p>
+                    <h2 class="experience-sub-title">Writing with Light</h2>
+                    <p>"'Photography', created from Greek roots and translates to writing with light. I knew this very recently, and it got me thinking about how similar photography is to writing...."</p>
+                    <p style="color: grey; font-style: italic;">Click below to read the full story</p>
                 </div>
             </div>
             <!-- "More Writings" Button -->
@@ -193,14 +362,79 @@
         </div>
     </section>
 
+    <!-- Fullscreen Modal -->
+    <div id="fullscreen-modal" class="fullscreen-modal" onclick="closeFullscreen()">
+        <div class="fullscreen-modal-content" onclick="event.stopPropagation()">
+            <button class="close-fullscreen" onclick="closeFullscreen()">×</button>
+            <video id="fullscreen-video" controls autoplay>
+            </video>
+        </div>
+    </div>
+
+    <!-- Image Fullscreen Modal -->
+    <div id="image-modal" class="image-modal" onclick="closeImageFullscreen()">
+        <div class="image-modal-content" onclick="event.stopPropagation()">
+            <button class="close-image" onclick="closeImageFullscreen()">×</button>
+            <img id="fullscreen-image" src="" alt="">
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script>
-        // Mobile menu function - make sure this matches your script.js
+        // Mobile menu function
         function toggleMenu() {
             const menu = document.querySelector('.menu-links');
             const icon = document.querySelector('.hamburger-icon');
             menu.classList.toggle('open');
             icon.classList.toggle('open');
+        }
+
+        // Fullscreen video functions
+        function openFullscreen(videoElement) {
+            const modal = document.getElementById('fullscreen-modal');
+            const fullscreenVideo = document.getElementById('fullscreen-video');
+            
+            // Copy video source
+            fullscreenVideo.src = videoElement.querySelector('source').src;
+            fullscreenVideo.type = videoElement.querySelector('source').type;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFullscreen() {
+            const modal = document.getElementById('fullscreen-modal');
+            const fullscreenVideo = document.getElementById('fullscreen-video');
+            
+            fullscreenVideo.pause();
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close fullscreen with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFullscreen();
+                closeImageFullscreen();
+            }
+        });
+
+        // Image fullscreen functions
+        function openImageFullscreen(imgElement) {
+            const modal = document.getElementById('image-modal');
+            const fullscreenImage = document.getElementById('fullscreen-image');
+            
+            fullscreenImage.src = imgElement.src;
+            fullscreenImage.alt = imgElement.alt;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageFullscreen() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
     </script>
     <style>

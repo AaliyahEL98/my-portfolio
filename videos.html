@@ -14,6 +14,10 @@
             margin-top: 2rem;
         }
 
+        .video-gallery.horizontal {
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        }
+
         .video-item {
             background: white;
             border-radius: 2rem;
@@ -30,10 +34,20 @@
         .video-container {
             position: relative;
             width: 100%;
-            height: 200px;
             margin-bottom: 1rem;
             border-radius: 1rem;
             overflow: hidden;
+            background: #000;
+        }
+
+        /* Vertical video container */
+        .video-container.vertical {
+            aspect-ratio: 9 / 16;
+        }
+
+        /* Horizontal video container */
+        .video-container.horizontal {
+            aspect-ratio: 16 / 9;
         }
 
         .video-container iframe,
@@ -41,6 +55,7 @@
             width: 100%;
             height: 100%;
             border-radius: 1rem;
+            object-fit: cover;
         }
 
         .video-placeholder {
@@ -84,10 +99,10 @@
            <ul class="nav-links">
             <li><a href="index.html">Home</a></li> 
             <li><a href="about.html">About Me</a></li>
-            <li><a href="videos.html">My Videos</a></li>
-            <li><a href="photography.html">My Photos</a></li>
-            <li><a href="writings.html">My Writings</a></li>
-            <li><a href="diaries.html">Chinese Streets</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="writings.html">Writings</a></li>
+            <li><a href="diaries.html">Ongoing Project</a></li>
            </ul>
         </div>
     </nav>
@@ -102,10 +117,10 @@
             <div class="menu-links">
                 <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
                 <li><a href="about.html" onclick="toggleMenu()">About Me</a></li>
-                <li><a href="videos.html" onclick="toggleMenu()">My Videos</a></li>
-                <li><a href="photography.html" onclick="toggleMenu()">My Photos</a></li>
-                <li><a href="writings.html" onclick="toggleMenu()">My Writings</a></li>
-                <li><a href="diaries.html" onclick="toggleMenu()">Chinese Streets</a></li>
+                <li><a href="videos.html" onclick="toggleMenu()">Videos</a></li>
+                <li><a href="photography.html" onclick="toggleMenu()">Photography</a></li>
+                <li><a href="writings.html" onclick="toggleMenu()">Writings</a></li>
+                <li><a href="diaries.html" onclick="toggleMenu()">Ongoing Project</a></li>
             </div>
         </div>
     </nav>
@@ -122,17 +137,10 @@
         <div class="video-gallery">
             <!-- Video 1 -->
             <div class="video-item">
-                <div class="video-container">
-                    <!-- Replace with your YouTube embed code or video file -->
-                    <iframe src="" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-                    <!-- OR if you have video files: -->
-                    <!-- <video controls>
-                        <source src="assets/videos/my-video1.mp4" type="video/mp4">
-                    </video> -->
+                <div class="video-container vertical">
+                    <video controls>
+                        <source src="assets/videos/mine/1.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="video-title">My Creative Project</div>
                 <div class="video-description">Short description of what this video is about and what I created.</div>
@@ -140,12 +148,10 @@
 
             <!-- Video 2 -->
             <div class="video-item">
-                <div class="video-container">
-                    <iframe src="" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
+                <div class="video-container vertical">
+                    <video controls>
+                        <source src="assets/videos/mine/2.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="video-title">Personal Story</div>
                 <div class="video-description">Another video I made sharing my experiences and creative vision.</div>
@@ -153,12 +159,10 @@
 
             <!-- Video 3 -->
             <div class="video-item">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
+                <div class="video-container vertical">
+                    <video controls>
+                        <source src="assets/videos/mine/3.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <div class="video-title">Creative Process</div>
                 <div class="video-description">Showing how I approach my creative work and video production.</div>
@@ -175,15 +179,13 @@
             Videos I've created with other creators, channels, and projects.
         </div>
 
-        <div class="video-gallery">
+        <div class="video-gallery horizontal">
             <!-- Collaboration 1 -->
             <div class="video-item">
-                <div class="video-container">
-                    <iframe src="assets/videos/projects/10月9日.mov" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
+                <div class="video-container horizontal">
+                    <video controls>
+                        <source src="assets/videos/projects/10月9日.mov" type="video/quicktime">
+                    </video>
                 </div>
                 <div class="video-title">"A piece of home in Nanjing"</div>
                 <div class="video-description">Collaboration with 我苏国际传播中心</div>
@@ -191,12 +193,10 @@
 
             <!-- Collaboration 2 -->
             <div class="video-item">
-                <div class="video-container">
-                    <iframe src="assets/videos/projects/10月9日 (1).mov" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
+                <div class="video-container horizontal">
+                    <video controls>
+                        <source src="assets/videos/projects/10月9日 (1).mov" type="video/quicktime">
+                    </video>
                 </div>
                 <div class="video-title">"Favorite Chinese Book"</div>
                 <div class="video-description">Collaboration with 我苏国际传播中心</div>
