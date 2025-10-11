@@ -22,6 +22,13 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            display: none;
+        }
+
+        .video-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -39,6 +46,7 @@
             justify-content: center;
             pointer-events: none;
             transition: background 0.3s ease;
+            z-index: 10;
         }
 
         .play-icon::after {
@@ -209,11 +217,8 @@
             <h1 class="title">Aaliyah ElAskary</h1>
             <p class="section__text__p2">Social Media Manager</p>
             <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/resume-english.pdf')">Download CV - English Version</button>
-                <button class="btn btn-color-2" onclick="window.open('./assets/resume-chinese.pdf')">下载个人简历 - 中文版</button>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://linkedin.com/'">
+                <button class="btn btn-color-2" onclick="window.open('./assets/AaliyahElAskary-CV.pdf')">Download CV - English Version</button>
+                <button class="btn btn-color-2" onclick="window.open('./assets/Aaliyah-chinese.pdf')">下载个人简历 - 中文版</button>
             </div>
         </div>
     </section>
@@ -224,7 +229,10 @@
         <h1 class="title">About Me</h1>
         <div class="section-container">
             <div class="video-cv-container">
-                <p>I'm a passionate Social Media Manager with a creative eye for storytelling and a love for connecting with people through digital platforms. Based in China, I've developed a unique perspective on content creation, blending cultural insights with engaging narratives. My journey has taken me through the vibrant streets of Beijing and beyond, where I've learned to capture moments that matter and share them in ways that resonate. I'm dedicated to building authentic connections, collaborating with creators, and continuously exploring innovative ways to tell compelling stories in the digital world.</p>
+            <p>
+                Hello! 
+                    I'm Aaliyah, a 27-year-old Egyptian living in China. My native language is Arabic, and I'm fluent in English and Chinese. My journey with Chinese began in 2014 when I first heard the language. Unlike many, I instantly fell in love with how it sounded. That fascination stayed with me through my final school years until, in 2016, I decided to pursue a bachelor's degree in Chinese Language and Literature. As a writer, I was often frustrated by my inability to fully express my thoughts in English. I’ve always felt that English, as a language, sometimes fails to capture the depth of emotion and thought I want to convey. So, I searched for a language with more layers, and what better choice than what’s often considered the mother of Asian languages?
+            </p>    
             </div>
         </div>
         <div class="btn-container" style="margin-top: 2rem;">
@@ -235,7 +243,7 @@
     </section>
 
     <!-- DIARIES PROJECT PREVIEW SECTION -->
-    <section id="diaries-preview">
+    <section id="diaries-preview" style="padding-top: 0.5rem !important; padding-bottom: 2rem !important;">
         <p class="section__text__p1">Ongoing Project</p>
         <h1 class="title">Diaries of Chinese Streets</h1>
         
@@ -305,6 +313,7 @@
                 <!-- Collaborations Preview -->
                 <div class="details-container color-container">
                     <div class="video-preview-container horizontal" onclick="openFullscreen(this.querySelector('video'))">
+                        <img class="video-cover" src="./assets/photos/Diaries of Chinese Streets/11.jpg" alt="Collaborations thumbnail">
                         <video>
                             <source src="./assets/videos/projects/10月9日.mov" type="video/quicktime">
                         </video>
@@ -315,6 +324,7 @@
                 <!-- My Own Videos Preview -->
                 <div class="details-container color-container">
                     <div class="video-preview-container vertical" onclick="openFullscreen(this.querySelector('video'))">
+                        <img class="video-cover" src="./assets/photos/Digital/2.jpeg" alt="My Original Content thumbnail">
                         <video>
                             <source src="./assets/videos/mine/1.mp4" type="video/mp4">
                         </video>
